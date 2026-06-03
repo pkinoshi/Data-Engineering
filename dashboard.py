@@ -24,7 +24,7 @@ from plotly.subplots import make_subplots
 
 # ── Google Sheets configuration 
 CREDS_FILE = "credentials.json"
-SHEET_ID   = "yyyyyyyyyyyyyyyyyyyyyyyyyy"    
+SHEET_ID   = "1SO61B4KSnWAqKYUG3LocwspGEjZbR2_dF1gGue3S-K0"    
 
 SHEET_TABS = {
     "raw":       "01_RawSensorData",
@@ -159,11 +159,11 @@ with st.sidebar:
     st.markdown("## ⚙️ IoT Pipeline Dashboard")
     st.markdown("---")
 
-    st.markdown("### 🔗 Google Sheets Source")
-    creds_input = st.text_input("Credentials file", value=CREDS_FILE)
-    sheet_input = st.text_input("Spreadsheet ID",   value=SHEET_ID)
+    #st.markdown("### 🔗 Google Sheets Source")
+    creds_input = CREDS_FILE
+    sheet_input = SHEET_ID
 
-    st.markdown("---")
+    #st.markdown("---")
     refresh_btn = st.button("🔄  Refresh from Sheets",
                             type="primary", use_container_width=True)
     if refresh_btn:
@@ -181,10 +181,11 @@ with st.sidebar:
 # ─────────────────────────────────────────────────────────────────────────────
 # ── MAIN ─────────────────────────────────────────────────────────────────────
 # ─────────────────────────────────────────────────────────────────────────────
+
 st.markdown("# ⚙️ Real-Time IoT Data Pipeline Dashboard")
-st.markdown('<span class="source-badge">📊 Data source: Google Sheets</span>',
-            unsafe_allow_html=True)
-st.markdown("*Predictive maintenance · data pulled live from your spreadsheet*")
+#st.markdown('<span class="source-badge">📊 Data source: Google Sheets</span>',
+#            unsafe_allow_html=True)
+st.markdown("*Predictive maintenance · data pulled live from the spreadsheet*")
 st.markdown("---")
 
 # ── Load data ────────────────────────────────────────────────────────────────
